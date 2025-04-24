@@ -52,7 +52,7 @@ resource "google_storage_bucket" "destination_bucket" {
   }
 
   encryption {
-    default_kms_key_name = "projects/${var.project}/locations/global/keyRings/${var.keyring}/cryptoKeys/${var.key}"
+    default_kms_key_name = "projects/${var.project}/locations/us/keyRings/${var.keyring}/cryptoKeys/${var.key}"
   }
 
   # Added logging bucket resource
