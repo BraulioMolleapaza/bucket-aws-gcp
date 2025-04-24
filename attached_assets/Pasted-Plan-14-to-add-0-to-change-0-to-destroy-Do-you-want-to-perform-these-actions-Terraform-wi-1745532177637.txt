@@ -1,0 +1,36 @@
+Plan: 14 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+google_storage_bucket.function_bucket: Creating...
+google_monitoring_notification_channel.email: Creating...
+google_service_account.sync_service_account: Creating...
+google_storage_bucket.logging: Creating...
+google_pubsub_topic.bucket_updates: Creating...
+google_storage_bucket.transfer_logs: Creating...
+aws_s3_bucket_notification.bucket_notification: Creating...
+google_service_account.sync_service_account: Still creating... [10s elapsed]
+google_service_account.sync_service_account: Still creating... [20s elapsed]
+google_service_account.sync_service_account: Still creating... [30s elapsed]
+google_service_account.sync_service_account: Still creating... [40s elapsed]
+google_service_account.sync_service_account: Still creating... [50s elapsed]
+google_service_account.sync_service_account: Still creating... [1m0s elapsed]
+google_service_account.sync_service_account: Still creating... [1m10s elapsed]
+google_service_account.sync_service_account: Still creating... [1m20s elapsed]
+google_service_account.sync_service_account: Still creating... [1m30s elapsed]
+google_service_account.sync_service_account: Still creating... [1m40s elapsed]
+google_service_account.sync_service_account: Still creating... [1m50s elapsed]
+google_service_account.sync_service_account: Still creating... [2m0s elapsed]
+google_service_account.sync_service_account: Still creating... [2m10s elapsed]
+google_service_account.sync_service_account: Still creating... [2m20s elapsed]
+google_service_account.sync_service_account: Still creating... [2m30s elapsed]
+google_service_account.sync_service_account: Still creating... [2m40s elapsed]
+google_service_account.sync_service_account: Still creating... [2m50s elapsed]
+google_service_account.sync_service_account: Still creating... [3m0s elapsed]
+google_service_account.sync_service_account: Still creating... [3m10s elapsed]
+google_service_account.sync_service_account: Still creating... [3m20s elapsed]
+google_service_account.sync_service_account: Still creating... [3m30s elapsed]

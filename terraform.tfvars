@@ -1,0 +1,11 @@
+
+gcp_project_id  = "acloud-br-gcp-gob-ti-dev"
+aws_bucket_name = "aws-s3-rep-gcp"
+gcs_bucket_name = "gcp-cs-rep-aws"
+environment     = "desa"
+aws_access_key  = ""
+aws_secret_key  = "x/Uvki2CkGLjfuqWy6M1CzZq8q1JxHJAWtP2746Z"
+project         = "ACLOUD-BR-GCP-GOB-TI-DEV"
+keyring         = "bucket-sync-keyring"
+key            = "bucket-sync-key-desa"
+notification_email = "braulio.molleapaza@gmail.com"
