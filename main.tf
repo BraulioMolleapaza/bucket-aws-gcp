@@ -65,12 +65,14 @@ resource "google_storage_bucket" "logging" {
   name     = "${var.gcs_bucket_name}-logs"
   location = "US"
   force_destroy = true
+  uniform_bucket_level_access = true
 }
 
 
 resource "google_storage_bucket" "transfer_logs" {
   name     = "${var.gcs_bucket_name}-transfer-logs"
   location = "US"
+  uniform_bucket_level_access = true
 
   lifecycle_rule {
     condition {
