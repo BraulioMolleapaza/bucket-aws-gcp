@@ -51,10 +51,6 @@ resource "google_storage_bucket" "destination_bucket" {
     managed_by  = "terraform"
   }
 
-  encryption {
-    default_kms_key_name = "projects/${var.project}/locations/us/keyRings/${var.keyring}/cryptoKeys/${var.key}"
-  }
-
   # Added logging bucket resource
   logging {
     log_bucket = google_storage_bucket.logging.name
