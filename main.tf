@@ -86,10 +86,16 @@ resource "google_service_account" "sync_service_account" {
   display_name = "Bucket Sync Service Account"
 }
 
-resource "google_project_iam_member" "storage_admin" {
-  project = var.gcp_project_id
-  role    = "roles/storage.admin"
-  member  = "serviceAccount:${google_service_account.sync_service_account.email}"
+resource "google_storage_bucket_iam_member" "destination_bucket_writer" {
+  bucket = google_storage_bucket.destination_bucket.name
+  role   = "roles/storage.objectViewer"
+  member = "serviceAccount:${google_service_account.sync_service_account.email}"
+}
+
+resource "google_storage_bucket_iam_member" "transfer_logs_writer" {
+  bucket = google_storage_bucket.transfer_logs.name
+  role   = "roles/storage.objectCreator"
+  member = "serviceAccount:${google_service_account.sync_service_account.email}"
 }
 
 resource "google_storage_transfer_job" "gcs_to_s3" {
