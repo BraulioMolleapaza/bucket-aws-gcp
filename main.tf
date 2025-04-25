@@ -106,7 +106,7 @@ resource "google_storage_transfer_job" "gcs_to_s3" {
     aws_s3_data_source {
       bucket_name = aws_s3_bucket.source_bucket.id
       aws_access_key {
-        access_key_id     = var.aws_access_key
+        access_key_id     = "AKIA43BKVFDS45D7NJUL"
         secret_access_key = var.aws_secret_key
       }
     }
