@@ -1,0 +1,45 @@
+  Enter a value: yes
+
+google_storage_bucket_object.function_zip: Destroying... [id=gcp-cs-rep-aws-functions-function-2025-04-25T00:58:47Z.zip]
+google_storage_bucket_iam_member.transfer_service_admin: Creating...
+google_pubsub_topic.bucket_updates: Creating...
+google_monitoring_notification_channel.email: Creating...
+google_storage_bucket_iam_member.transfer_service_viewer: Creating...
+google_storage_transfer_job.gcs_to_s3: Creating...
+aws_s3_bucket_notification.bucket_notification: Creating...
+google_storage_bucket_object.function_zip: Destruction complete after 0s
+google_storage_bucket_object.function_zip: Creating...
+google_storage_bucket_object.function_zip: Creation complete after 0s [id=gcp-cs-rep-aws-functions-function-2025-04-25T01:01:34Z.zip]
+google_storage_bucket_iam_member.transfer_service_admin: Creation complete after 10s [id=b/gcp-cs-rep-aws/roles/storage.admin/serviceAccount:project-1028436318023@storage-transfer-service.iam.gserviceaccount.com]
+google_storage_bucket_iam_member.transfer_service_viewer: Creation complete after 10s [id=b/gcp-cs-rep-aws/roles/storage.objectViewer/serviceAccount:project-1028436318023@storage-transfer-service.iam.gserviceaccount.com]
+╷
+│ Error: googleapi: Error 400: Failed to obtain the location of the GCS bucket gcp-cs-rep-aws Additional details: project-1028436318023@storage-transfer-service.iam.gserviceaccount.com does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource (or it may not exist)., failedPrecondition
+│ 
+│   with google_storage_transfer_job.gcs_to_s3,
+│   on main.tf line 117, in resource "google_storage_transfer_job" "gcs_to_s3":
+│  117: resource "google_storage_transfer_job" "gcs_to_s3" {
+│ 
+╵
+╷
+│ Error: creating S3 Bucket (aws-s3-rep-gcp) Notification: operation error S3: PutBucketNotificationConfiguration, https response error StatusCode: 400, RequestID: 38VR935Z9YK3VKFZ, HostID: sadzt6KZAk1iCsGngX+dkz5lz6DfxASfEWrp7XtEep0ezODWQoIPgfil7GU34xKcIxWr/2UPQi2R3K3oTia0oj+a3s9VbnpN, api error InvalidArgument: Unable to validate the following destination configurations
+│ 
+│   with aws_s3_bucket_notification.bucket_notification,
+│   on main.tf line 152, in resource "aws_s3_bucket_notification" "bucket_notification":
+│  152: resource "aws_s3_bucket_notification" "bucket_notification" {
+│ 
+╵
+╷
+│ Error: Error creating NotificationChannel: googleapi: Error 403: Permission denied (or the resource may not exist).
+│ 
+│   with google_monitoring_notification_channel.email,
+│   on monitoring.tf line 17, in resource "google_monitoring_notification_channel" "email":
+│   17: resource "google_monitoring_notification_channel" "email" {
+│ 
+╵
+╷
+│ Error: Error creating Topic: googleapi: Error 403: User not authorized to perform this action.
+│ 
+│   with google_pubsub_topic.bucket_updates,
+│   on pubsub.tf line 1, in resource "google_pubsub_topic" "bucket_updates":
+│    1: resource "google_pubsub_topic" "bucket_updates" {
+│ 
