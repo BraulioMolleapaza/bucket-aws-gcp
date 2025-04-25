@@ -86,6 +86,22 @@ resource "google_service_account" "sync_service_account" {
   display_name = "Bucket Sync Service Account"
 }
 
+
+
+# Agregar permisos para Storage Transfer Service
+resource "google_storage_bucket_iam_member" "transfer_service_viewer" {
+  bucket = google_storage_bucket.destination_bucket.name
+  role   = "roles/storage.objectViewer"
+  member = "serviceAccount:project-1028436318023@storage-transfer-service.iam.gserviceaccount.com"
+}
+
+resource "google_storage_bucket_iam_member" "transfer_service_admin" {
+  bucket = google_storage_bucket.destination_bucket.name
+  role   = "roles/storage.admin"
+  member = "serviceAccount:project-1028436318023@storage-transfer-service.iam.gserviceaccount.com"
+}
+
+
 resource "google_storage_bucket_iam_member" "destination_bucket_writer" {
   bucket = google_storage_bucket.destination_bucket.name
   role   = "roles/storage.objectViewer"
